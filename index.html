@@ -104,6 +104,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <script type="text/ng-template" id="loginmenu.html">
 <ul class="nav pull-right">
 
+<li ng-hide="isLogined()">
+    <a href="#" >ログイン<b class="caret"></b></a>
+</li>
+
 <li ng-hide="isLogined()" class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" >ログイン<b class="caret"></b></a>
   <ul class="dropdown-menu pull-right">
