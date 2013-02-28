@@ -1,58 +1,58 @@
 <!doctype html>
 <html ng-app="myApp"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reception Desk - 株式会社人気組</title>
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
-<link rel="stylesheet" href="docs.css">
-<link href="https://plus.google.com/115655353289561122897" rel="publisher" /><script type="text/javascript">
-window.___gcfg = {lang: 'ja'};
-(function() 
-{var po = document.createElement("script");
-po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-var s = document.getElementsByTagName("script")[0];
-s.parentNode.insertBefore(po, s);
-})();
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-4506669-6']);
-  _gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
-<style type="text/css">
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reception Desk - 株式会社人気組</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="docs.css">
+    <link href="https://plus.google.com/115655353289561122897" rel="publisher" /><script type="text/javascript">
+        window.___gcfg = {lang: 'ja'};
+        (function()
+        {var po = document.createElement("script");
+            po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(po, s);
+        })();
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4506669-6']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <style type="text/css">
+    </style>
 </head><body ng-controller="mainCtrl" data-spy="scroll" data-target=".bs-docs-sidebar">
 
 <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
+    <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="http://ninkigumi.github.com/" style="padding-right:50px"><img src="http://ninkigumi.github.com/ninkigumi_icon.svg" width="24" height="24" alt="人気組"><span style="position: relative;left: 27px;">ninkigumi</span></a>
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="http://ninkigumi.github.com/" style="padding-right:50px"><img src="http://ninkigumi.github.com/ninkigumi_icon.svg" width="24" height="24" alt="人気組"><span style="position: relative;left: 27px;">ninkigumi</span></a>
 
 
 
-          <div class="nav-collapse collapse">
+            <div class="nav-collapse collapse">
 
-            <ng-include src="loginmenu"></ng-include>
+                <ng-include src="loginmenu"></ng-include>
 
-          </div>
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
 
 
 <header class="jumbotron subhead" id="overview" style="background-color: #3A3406;">
-  <div class="container">
-    <h1>Reception Desk</h1>
-    <p class="lead">You are a very important person.</p>
-  </div>
+    <div class="container">
+        <h1>Reception Desk</h1>
+        <p class="lead">You are a very important person.</p>
+    </div>
 </header>
 
 
@@ -60,29 +60,29 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 
 
-<div class="row">
-    <div class="span9">
-    <form novalidate  id="receptiondesk" name="receptiondesk" ng-submit="postMessage()">
-        <fieldset class="control-group" style="border-bottom: 1px solid #EEE;margin:10px 0 20px;">
-        <div class="controls">
-        <p style="font-size: 24px;line-height: 36px;margin:20px 0 10px;">はい、株式会社人気組です。<br>何か私たちにできることはございますか？</p>
-        </div>
-        </fieldset>
-        <fieldset class="control-group">
-          <label class="control-label" for="message"><span ng-hide="isLogined()">あなたのメッセージ</span><span ng-show="isLogined()"><img ng-src="{{yourPicture}}" style="vertical-align:sub;" width="64" height="64" alt="{{yourName}}" style="vertical-align:sub;">{{yourName}}さんのメッセージ</span></label>
-          <div class="controls">
-            <textarea class="span7 disabled" name="message" id="message" rows="10" placeholder="" required="" ng-model="message.message" required ng-minlength="0"></textarea>
-          </div>
-        </fieldset>
+    <div class="row">
+        <div class="span9">
+            <form novalidate  id="receptiondesk" name="receptiondesk" ng-submit="postMessage()">
+                <fieldset class="control-group" style="border-bottom: 1px solid #EEE;margin:10px 0 20px;">
+                    <div class="controls">
+                        <p style="font-size: 24px;line-height: 36px;margin:20px 0 10px;">はい、株式会社人気組です。<br>何か私たちにできることはございますか？</p>
+                    </div>
+                </fieldset>
+                <fieldset class="control-group">
+                    <label class="control-label" for="message"><span ng-hide="isLogined()">あなたのメッセージ</span><span ng-show="isLogined()"><img ng-src="{{yourPicture}}" style="vertical-align:sub;" width="64" height="64" alt="{{yourName}}" style="vertical-align:sub;">{{yourName}}さんのメッセージ</span></label>
+                    <div class="controls">
+                        <textarea class="span7 disabled" name="message" id="message" rows="10" placeholder="" required="" ng-model="message.message" required ng-minlength="0"></textarea>
+                    </div>
+                </fieldset>
 
-        <ng-include src="formalert"></ng-include>
+                <ng-include src="formalert"></ng-include>
 
-        <fieldset class="form-actions" ng-hide="receptiondesk.message.$error.required">
-          <button type="submit" id="smb01" class="btn btn-primary" data-loading-text="送信中…"><i class="icon-white icon-share-alt"></i>上記の内容で送信します</button>
-        </fieldset>
-    </form>
-    </div><!--span9-->
-</div>
+                <fieldset class="form-actions" ng-hide="receptiondesk.message.$error.required">
+                    <button type="submit" id="smb01" class="btn btn-primary" data-loading-text="送信中…"><i class="icon-white icon-share-alt"></i>上記の内容で送信します</button>
+                </fieldset>
+            </form>
+        </div><!--span9-->
+    </div>
 
 
 
@@ -91,52 +91,71 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 
 <footer class="footer">
-<div class="container">
+    <div class="container">
         <p class="pull-right"><img src="http://ninkigumi.github.com/ninkigumi_logo.svg" width="120" height="60" alt="人気組"></p>
         <p>&copy; 2013 株式会社人気組 &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</div>
+    </div>
 </footer>
+
+<script type="text/javascript">
+    (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/client:plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
 <script src="docs.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
 <script type="text/ng-template" id="loginmenu.html">
-<ul class="nav pull-right">
+    <ul class="nav pull-right">
 
-<li ng-hide="isLogined()">
-    <a href="#" >ログイン<b class="caret"></b></a>
-</li>
+        <li ng-hide="isLogined()" class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >ログイン<b class="caret"></b></a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="#">
+                <span id="signinButtonGoogleSginIn">
+                  <span
+                          class="g-signin"
+                          data-callback="signinCallback"
+                          data-clientid="493252854674.apps.googleusercontent.com"
+                          data-cookiepolicy="single_host_origin"
+                          data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                          data-scope="https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+                          data-height="Tall"
+                          data-theme="dark"
+                          data-width="wide">
+                  </span>
+                </span></a></li>
+                <li class="googlelogin"><a href="#" ng-click="googleLogin()"> Google OpenID Connect</a></li><li class="facebooklogin"><a href="#" ng-click="facebookLogin()"> Facebook Connect</a></li>
+            </ul>
+        </li>
+        <li class="dropdown username" ng-show="isLogined()">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                <img class="" ng-src="{{yourPicture}}" width="24" height="24" alt="{{yourName}}" id="navyourpicture"> <div id="navyourname">{{yourName}}<b class="caret"></b></div>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="{{yourProfile}}" target="_blank">プロフィール</a></li>
+                <li><a id="logout" ng-click="logout()">ログアウト</a></li>
+            </ul>
+        </li>
 
-<li ng-hide="isLogined()" class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" >ログイン<b class="caret"></b></a>
-  <ul class="dropdown-menu pull-right">
-    <li class="googlelogin"><a href="#" ng-click="googleLogin()"> Google OpenID Connect</a></li><li class="facebooklogin"><a href="#" ng-click="facebookLogin()"> Facebook Connect</a></li>
-  </ul>
-</li>
-<li class="dropdown username" ng-show="isLogined()">
-  <a href="" class="dropdown-toggle" data-toggle="dropdown">
-    <img class="" ng-src="{{yourPicture}}" width="24" height="24" alt="{{yourName}}" id="navyourpicture"> <div id="navyourname">{{yourName}}<b class="caret"></b></div>
-  </a>
-  <ul class="dropdown-menu">
-    <li><a href="{{yourProfile}}" target="_blank">プロフィール</a></li>
-    <li><a id="logout" ng-click="logout()">ログアウト</a></li>
-  </ul>
-</li>
-
-</ul>
+    </ul>
 </script>
 
 <script type="text/ng-template" id="formalert.html">
-<fieldset class="control-group">
-  <div class="controls" id="receptiondesk_alert">
-  </div>
-  <div class="controls">
-  <!--<div class="alert  alert-success" ng-show="postMessage_success"><a class="close" href="#" ng-click="postMessage_success=false">×</a><strong>送信完了しました！</strong></div>-->
-  <!--<div class="alert  alert-error" ng-show="postMessage_error"><a class="close" href="#" ng-click="postMessage_error_reset()">×</a><h4 class="alert-heading">送信できませんでした！</h4><p>通信中にエラーが発生しました。</p></div>-->
-  <div class="alert" ng-show="receptiondesk.message.$error.required"><strong>メッセージ</strong>を入力してください。（送信メッセージは暗号化され第三者は閲覧できません）</div>
-  </div>
-</fieldset>
+    <fieldset class="control-group">
+        <div class="controls" id="receptiondesk_alert">
+        </div>
+        <div class="controls">
+            <!--<div class="alert  alert-success" ng-show="postMessage_success"><a class="close" href="#" ng-click="postMessage_success=false">×</a><strong>送信完了しました！</strong></div>-->
+            <!--<div class="alert  alert-error" ng-show="postMessage_error"><a class="close" href="#" ng-click="postMessage_error_reset()">×</a><h4 class="alert-heading">送信できませんでした！</h4><p>通信中にエラーが発生しました。</p></div>-->
+            <div class="alert" ng-show="receptiondesk.message.$error.required"><strong>メッセージ</strong>を入力してください。（送信メッセージは暗号化され第三者は閲覧できません）</div>
+        </div>
+    </fieldset>
 </script>
 
 </html>
