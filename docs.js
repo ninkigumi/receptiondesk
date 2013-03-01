@@ -63,6 +63,18 @@ function mainCtrl($scope, $http){
 
     $scope.postMessage = function(){
         if( $scope.message.message ){
+            if(localStorage.googleAccessToken){
+                $http.get('https://accounts.google.com/o/oauth2/tokeninfo?access_token=' + localStorage.googleAccessToken).
+                    success(function(data, status, headers, config) {
+                        console.log('valid google access token');
+                    }).
+                    error(function(data, status, headers, config) {
+                        localStorage.removeItem('googleAccessToken');
+                        localStorage.removeItem('googleUserInfo');
+                        angular.googleUserInfo = null;
+                        setProfile(angular.mainScope);
+                    })
+            }
             if(localStorage.googleAccessToken || localStorage.facebookAccessToken){
                 angular.element('button#smb01').button('loading');
                 if(localStorage.googleAccessToken){
