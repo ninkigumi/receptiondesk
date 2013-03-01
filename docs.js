@@ -73,7 +73,7 @@ function mainCtrl($scope, $http){
                         localStorage.removeItem('googleUserInfo');
                         angular.googleUserInfo = null;
                         setProfile(angular.mainScope);
-                        googleLogin();
+                        //googleLogin();
                     })
             }
             if(localStorage.googleAccessToken || localStorage.facebookAccessToken){
