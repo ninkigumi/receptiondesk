@@ -187,7 +187,7 @@ function postMessageComment(){
         if(data !== '{}'){
             delete angular.http.defaults.headers.common['X-Requested-With'];
             //$http({method: 'POST', url: 'https://ninkigumi-contact.appspot.com/receptiondesk/jsonpost', data:data, withCredentials:true}).
-            $http.post('https://ninkigumi-contact.appspot.com/receptiondesk/jsonpost', data, {withCredentials:true}).
+            angular.http.post('https://ninkigumi-contact.appspot.com/receptiondesk/jsonpost', data, {withCredentials:true}).
                 success(function(data, status, headers, config) {
                     angular.element("textarea#message").val('');
                     angular.mainScope.message.message = '';
