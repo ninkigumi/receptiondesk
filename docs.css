@@ -6,7 +6,7 @@
     border: 1px solid #e6e6e6;
     border-radius: 4px;
 }
-#gInteractiveBtn .icon {
+#gInteractiveBtn .gicon {
     width: 20px;
     height: 20px;
     display: inline-block;
@@ -17,7 +17,7 @@
     color: #fff;
     border: #dd4b39;
 }
-#gInteractiveBtn:hover .icon {
+#gInteractiveBtn:hover .gicon {
     background: url('https://developers.google.com/+/images/branding/btn_icons_sprite.png') transparent 0 0px no-repeat;
 }
 
