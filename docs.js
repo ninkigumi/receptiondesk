@@ -18,8 +18,9 @@ myApp.run(function($rootScope, $http) {
                 setFacebookUserInfo(facebookAccessToken);
             }
         }
-
     }, true);
+
+    //TODO Chrome for iOS対応 コードを書く
 
 });
 
@@ -67,8 +68,6 @@ function mainCtrl($scope, $http){
         }
         return false;
     }
-
-    //$scope.gplusone = gapi.interactivepost.render();
 
 }
 
