@@ -64,7 +64,7 @@ function mainCtrl($scope, $http){
     $scope.postMessage = function(){
         if( $scope.message.message ){
             if(localStorage.googleAccessToken){
-                $http.get('https://accounts.google.com/o/oauth2/tokeninfo?access_token=' + localStorage.googleAccessToken).
+                $http.get('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=' + localStorage.googleAccessToken).
                     success(function(data, status, headers, config) {
                         console.log('valid google access token');
                     }).
