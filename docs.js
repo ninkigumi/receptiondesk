@@ -69,11 +69,11 @@ function mainCtrl($scope, $http){
                         console.log('valid google access token');
                     }).
                     error(function(data, status, headers, config) {
+                        console.log('error');
                         localStorage.removeItem('googleAccessToken');
                         localStorage.removeItem('googleUserInfo');
                         angular.googleUserInfo = null;
                         setProfile(angular.mainScope);
-                        //googleLogin();
                     })
             }
             if(localStorage.googleAccessToken || localStorage.facebookAccessToken){
