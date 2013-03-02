@@ -68,6 +68,8 @@ function mainCtrl($scope, $http){
         return false;
     }
 
+    gapi.interactivepost.render();
+
 }
 
 function setProfile($scope){
