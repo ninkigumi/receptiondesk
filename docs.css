@@ -24,28 +24,6 @@
 
 
 
-#gInteractiveBtn {
-    padding: 5px;
-    background: #fff;
-    cursor: pointer;
-    line-height: 20px;
-    border: 1px solid #e6e6e6;
-    border-radius: 4px;
-}
-#gInteractiveBtn .gicon {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background: url('https://developers.google.com/+/images/branding/btn_icons_sprite.png') transparent 0 -40px no-repeat;
-}
-#gInteractiveBtn:hover {
-    background-color: #cc3732;
-    color: #fff;
-    border: #dd4b39;
-}
-#gInteractiveBtn:hover .gicon {
-    background: url('https://developers.google.com/+/images/branding/btn_icons_sprite.png') transparent 0 0px no-repeat;
-}
 
 
 /* Sidenav for Docs
