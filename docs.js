@@ -68,7 +68,7 @@ function mainCtrl($scope, $http){
         return false;
     }
 
-    gapi.interactivepost.render();
+    $scope.gplusone = gapi.interactivepost.render();
 
 }
 
