@@ -15,7 +15,7 @@ myApp.run(function($rootScope, $http) {
             if(o.googleAccessToken){
                 setGoogleUserInfo(o.googleAccessToken);
             }else if(o.facebookAccessToken){
-                setFacebookUserInfo(facebookAccessToken);
+                setFacebookUserInfo(o.facebookAccessToken);
             }
         }
     }, true);
