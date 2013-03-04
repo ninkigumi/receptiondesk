@@ -143,7 +143,7 @@ function setGoogleUserInfo(googleAccessToken) {
 }
 
 function setFacebookUserInfo(facebookAccessToken) {
-    angular.$http({method: 'GET', url: 'https://graph.facebook.com/me?access_token=' + o.facebookAccessToken}).
+    angular.http({method: 'GET', url: 'https://graph.facebook.com/me?access_token=' + o.facebookAccessToken}).
         success(function(data, status, headers, config) {
             angular.facebookUserInfo = data;
             setProfile(angular.mainScope);
