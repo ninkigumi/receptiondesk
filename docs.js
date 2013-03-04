@@ -172,6 +172,21 @@ function validateTokenInfo(){
                 googleLogin();
             })
     }
+    if(localStorage.facebookAccessToken){
+        angular.http.get('https://graph.facebook.com/app/?access_token=' + localStorage.facebookAccessToken).
+            success(function(data, status, headers, config) {
+                console.log('valid facebook access token');
+                postMessageComment();
+            }).
+            error(function(data, status, headers, config) {
+                console.log('error');
+                localStorage.removeItem('facebookAccessToken');
+                localStorage.removeItem('facebookUserInfo');
+                angular.googleUserInfo = null;
+                setProfile(angular.mainScope);
+                facebookLogin();
+            })
+    }
 }
 
 function postMessageComment(){
