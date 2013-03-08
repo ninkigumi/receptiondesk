@@ -7,7 +7,7 @@
 
     <title>Reception Desk - 株式会社人気組</title>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="docs.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link href="https://plus.google.com/115655353289561122897" rel="publisher" /><script type="text/javascript">
         window.___gcfg = {lang: 'ja'};
         (function()
@@ -25,8 +25,6 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <style type="text/css">
-    </style>
 </head><body ng-controller="mainCtrl" data-spy="scroll" data-target=".bs-docs-sidebar">
 
 <div class="navbar navbar-fixed-top">
@@ -39,8 +37,6 @@
             </button>
             <a class="brand" href="http://ninkigumi.github.com/" style="padding-right:50px"><img src="http://ninkigumi.github.com/ninkigumi_icon.svg" width="24" height="24" alt="人気組"><span style="position: relative;left: 27px;">ninkigumi</span></a>
 
-
-
             <div class="nav-collapse collapse">
 
                 <ng-include src="loginmenu"></ng-include>
@@ -51,21 +47,20 @@
 </div>
 
 
-
-<header class="jumbotron subhead" id="overview" style="background-color: #3A3406;">
+<header class="jumbotron subhead jumbotronA" id="overview">
     <div class="container">
-        <h1>Reception Desk</h1>
+        <h1>ReceptionDesk</h1>
         <p class="lead">You are a very important person.</p>
         <span id="gInteractiveBtn"
-                class="g-interactivepost"
-                data-contenturl="http://ninkigumi.github.com/receptiondesk/"
-                data-contentdeeplinkid="/receptiondesk/"
-                data-clientid="493252854674.apps.googleusercontent.com"
-                data-cookiepolicy="single_host_origin"
-                data-prefilltext="これはいいね！"
-                data-calltoactionlabel="INVITE"
-                data-calltoactionurl="http://ninkigumi.github.com/receptiondesk/"
-                data-calltoactiondeeplinkid="/receptiondesk/">
+              class="g-interactivepost"
+              data-contenturl="http://ninkigumi.github.com/receptiondesk/"
+              data-contentdeeplinkid="/receptiondesk/"
+              data-clientid="493252854674.apps.googleusercontent.com"
+              data-cookiepolicy="single_host_origin"
+              data-prefilltext="これはいいね！"
+              data-calltoactionlabel="INVITE"
+              data-calltoactionurl="http://ninkigumi.github.com/receptiondesk/"
+              data-calltoactiondeeplinkid="/receptiondesk/">
               <span class="gicon">&nbsp;</span>
   <span class="glabel">Invite your friends!</span>
         </span>
@@ -75,29 +70,29 @@
 
 <div class="container">
 
-
-
     <div class="row">
         <div class="span9">
-            <form novalidate  id="receptiondesk" name="receptiondesk" ng-submit="postMessage()">
-                <fieldset class="control-group" style="border-bottom: 1px solid #EEE;margin:10px 0 20px;">
-                    <div class="controls">
-                        <p style="font-size: 24px;line-height: 36px;margin:20px 0 10px;">はい、株式会社人気組です。<br>何か私たちにできることはございますか？</p>
-                    </div>
-                </fieldset>
-                <fieldset class="control-group">
-                    <label class="control-label" for="message"><span ng-hide="isLogined()">あなたのメッセージ</span><span ng-show="isLogined()"><img ng-src="{{yourPicture}}" style="vertical-align:sub;" width="64" height="64" alt="{{yourName}}" style="vertical-align:sub;">{{yourName}}さんのメッセージ</span></label>
-                    <div class="controls">
-                        <textarea class="span7 disabled" name="message" id="message" rows="10" placeholder="" required="" ng-model="message.message" required ng-minlength="0"></textarea>
-                    </div>
-                </fieldset>
+            
+    <form novalidate  id="receptiondesk" name="receptiondesk" ng-submit="postMessage()">
+        <fieldset class="control-group" style="border-bottom: 1px solid #EEE;margin:10px 0 20px;">
+            <div class="controls">
+                <p style="font-size: 24px;line-height: 36px;margin:20px 0 10px;">はい、株式会社人気組です。<br>何か私たちにできることはございますか？</p>
+            </div>
+        </fieldset>
+        <fieldset class="control-group">
+            <label class="control-label" for="message"><span ng-hide="isLogined()">あなたのメッセージ</span><span ng-show="isLogined()"><img ng-src="{{yourPicture}}" style="vertical-align:sub;" width="64" height="64" alt="{{yourName}}" style="vertical-align:sub;">{{yourName}}さんのメッセージ</span></label>
+            <div class="controls">
+                <textarea class="span7 disabled" name="message" id="message" rows="10" placeholder="" required="" ng-model="message.message" required ng-minlength="0"></textarea>
+            </div>
+        </fieldset>
 
-                <ng-include src="formalert"></ng-include>
+        <ng-include src="formalert"></ng-include>
 
-                <fieldset class="form-actions" ng-hide="receptiondesk.message.$error.required">
-                    <button type="submit" id="smb01" class="btn btn-primary" data-loading-text="送信中…"><i class="icon-white icon-share-alt"></i>上記の内容で送信します</button>
-                </fieldset>
-            </form>
+        <fieldset class="form-actions" ng-hide="receptiondesk.message.$error.required">
+            <button type="submit" id="smb01" class="btn btn-primary" data-loading-text="送信中…"><i class="icon-white icon-share-alt"></i>上記の内容で送信します</button>
+        </fieldset>
+    </form>
+
         </div><!--span9-->
         <div class="span3">
             <script type="text/javascript"><!--
@@ -114,11 +109,7 @@
         </div>
     </div>
 
-
-
-
 </div><!-- container -->
-
 
 <footer class="footer">
     <div class="container">
@@ -138,7 +129,9 @@
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
-<script src="docs.js"></script>
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 <script type="text/ng-template" id="loginmenu.html">
     <ul class="nav pull-right">
@@ -174,7 +167,6 @@
         </li>
     </ul>
 </script>
-
 <script type="text/ng-template" id="formalert.html">
     <fieldset class="control-group">
         <div class="controls" id="receptiondesk_alert">

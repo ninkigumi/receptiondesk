@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', [])
-    .config(['$httpProvider', function($httpProvider) {
-        delete $httpProvider.defaults.headers.common["X-Requested-With"]
+    .config(['$httpProvider', function ($httpProvider) {
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
     }]);
 
 myApp.run(function($rootScope, $http) {
@@ -9,12 +9,12 @@ myApp.run(function($rootScope, $http) {
     window.addEventListener("message", function (e) {
         $rootScope.$broadcast('event:messageReceived', true);
         console.log("message received");
-        if (e.origin == 'https://ninkigumi-aaa.appspot.com' || e.origin == 'http://ninkigumi.github.com') {
+        if (e.origin === 'https://ninkigumi-aaa.appspot.com' || e.origin === 'http://ninkigumi_github_com') {
             console.log(e.data);
-            o = JSON.parse(e.data);
-            if(o.googleAccessToken){
+            var o = JSON.parse(e.data);
+            if (o.googleAccessToken) {
                 setGoogleUserInfo(o.googleAccessToken);
-            }else if(o.facebookAccessToken){
+            } else if (o.facebookAccessToken) {
                 setFacebookUserInfo(o.facebookAccessToken);
             }
         }
@@ -25,11 +25,7 @@ myApp.run(function($rootScope, $http) {
 });
 
 function isLogined(){
-    if (angular.googleUserInfo || angular.facebookUserInfo){
-        return true;
-    }else{
-        return false;
-    }
+    return angular.googleUserInfo || angular.facebookUserInfo;
 }
 
 function mainCtrl($scope, $http){
@@ -41,13 +37,13 @@ function mainCtrl($scope, $http){
     $scope.facebookLogin = facebookLogin;
     $scope.logout = logout;
 
-    $scope.postMessage_error_reset = function(){
+    $scope.postMessage_error_reset = function () {
         $scope.postMessage_error = false;
-    }
+    };
 
-    $scope.a = function(){
+    $scope.a = function () {
         angular.element('#receptiondesk_alert').append('<div id="messagealert_success" class="alert  alert-success fade in"><a class="close" data-dismiss="alert" href="#">×</a><strong>送信完了しました！</strong></div>');
-    }
+    };
 
     $scope.message = {message: ''};
 
@@ -58,11 +54,11 @@ function mainCtrl($scope, $http){
 
     setProfile($scope);
 
-    angular.rootScope.$on('event:messageReceived', function() {
+    angular.rootScope.$on('event:messageReceived', function () {
 
     });
 
-    $scope.postMessage = function(){
+    $scope.postMessage = function (){
         if( $scope.message.message ){
             validateTokenInfo();
         }
@@ -131,8 +127,8 @@ function signinCallback(authResult) {
 }
 
 function setGoogleUserInfo(googleAccessToken) {
-    angular.http({method: 'GET', url: 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + googleAccessToken}).
-        success(function(data, status, headers, config) {
+    angular.http({method: 'GET', url: 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=' + googleAccessToken})
+        .success(function(data, status, headers, config) {
             console.log(data);
             angular.googleUserInfo = data;
             setProfile(angular.mainScope);
@@ -143,14 +139,14 @@ function setGoogleUserInfo(googleAccessToken) {
 }
 
 function setFacebookUserInfo(facebookAccessToken) {
-    angular.http({method: 'GET', url: 'https://graph.facebook.com/me?access_token=' + o.facebookAccessToken}).
-        success(function(data, status, headers, config) {
+    angular.http({method: 'GET', url: 'https://graph.facebook.com/me?access_token=' + facebookAccessToken})
+        .success(function(data, status, headers, config) {
             angular.facebookUserInfo = data;
             setProfile(angular.mainScope);
             var a = {email:  data.email, first_name: data.first_name, gender: data.gender, id: data.id, last_name: data.last_name, link: data.link, name: data.name, locale: data.locale};
             //cookieMgr.cookie("facebookUserInfo", JSON.stringify(a));
             localStorage.facebookUserInfo = JSON.stringify(a);
-            localStorage.facebookAccessToken = o.facebookAccessToken;
+            localStorage.facebookAccessToken = facebookAccessToken;
             if( angular.mainScope.message.message ){ angular.mainScope.postMessage(); }
 
         })
@@ -158,12 +154,12 @@ function setFacebookUserInfo(facebookAccessToken) {
 
 function validateTokenInfo(){
     if(localStorage.googleAccessToken){
-        angular.http.get('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=' + localStorage.googleAccessToken).
-            success(function(data, status, headers, config) {
+        angular.http.get('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=' + localStorage.googleAccessToken)
+            .success(function(data, status, headers, config) {
                 console.log('valid google access token');
                 postMessageComment();
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('error');
                 localStorage.removeItem('googleAccessToken');
                 localStorage.removeItem('googleUserInfo');
@@ -173,12 +169,12 @@ function validateTokenInfo(){
             })
     }
     if(localStorage.facebookAccessToken){
-        angular.http.get('https://graph.facebook.com/app/?access_token=' + localStorage.facebookAccessToken).
-            success(function(data, status, headers, config) {
+        angular.http.get('https://graph.facebook.com/app/?access_token=' + localStorage.facebookAccessToken)
+            .success(function(data, status, headers, config) {
                 console.log('valid facebook access token');
                 postMessageComment();
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('error');
                 localStorage.removeItem('facebookAccessToken');
                 localStorage.removeItem('facebookUserInfo');
@@ -198,20 +194,20 @@ function postMessageComment(){
         if(localStorage.facebookAccessToken){
             angular.mainScope.message.facebookAccessToken = localStorage.facebookAccessToken;
         }
-        var data = JSON.stringify( angular.mainScope.message );
+        var data = JSON.stringify(angular.mainScope.message);
         console.log(data);
         if(data !== '{}'){
             delete angular.http.defaults.headers.common['X-Requested-With'];
             //$http({method: 'POST', url: 'https://ninkigumi-contact.appspot.com/receptiondesk/jsonpost', data:data, withCredentials:true}).
-            angular.http.post('https://ninkigumi-contact.appspot.com/receptiondesk/jsonpost', data, {withCredentials:true}).
-                success(function(data, status, headers, config) {
+            angular.http.post('https://ninkigumi-contact.appspot.com/receptiondesk/jsonpost', data, {withCredentials:true})
+                .success(function (data, status, headers, config) {
                     angular.element("textarea#message").val('');
                     angular.mainScope.message.message = '';
                     angular.element('#receptiondesk_alert').append('<div id="messagealert_success" class="alert  alert-success fade in"><a class="close" data-dismiss="alert" href="#">×</a><strong>送信完了しました！</strong></div>');
                     //angular.mainScope.postMessage_success = true;
                     angular.element('button#smb01').button('reset');
-                }).
-                error(function(data, status, headers, config) {
+                })
+                .error(function (data, status, headers, config) {
                     angular.element('#receptiondesk_alert').append('<div id="messagealert_error" class="alert  alert-error fade in"><a class="close" data-dismiss="alert" href="#">×</a><h4 class="alert-heading">送信できませんでした！</h4><p>通信中にエラーが発生しました。</p></div>');
                     angular.mainScope.postMessage_error = true;
                     console.log($scope.postMessage_error);

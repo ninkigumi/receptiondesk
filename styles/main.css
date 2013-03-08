@@ -1,3 +1,7 @@
+.jumbotronA{
+    background-color: #3A3406;
+}
+
 #gInteractiveBtn {
     padding: 5px;
     color: #fff;
@@ -88,7 +92,7 @@
 }
 .bs-docs-sidenav .active .icon-chevron-right,
 .bs-docs-sidenav .active a:hover .icon-chevron-right {
-  background-image: url(../img/glyphicons-halflings-white.png);
+  background-image: url(http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/img/glyphicons-halflings-white.png);
   opacity: 1;
 }
 .bs-docs-sidenav.affix {
