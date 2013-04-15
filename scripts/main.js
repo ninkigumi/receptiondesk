@@ -9,7 +9,7 @@ myApp.run(function ($rootScope, $http) {
     window.addEventListener("message", function (e) {
         $rootScope.$broadcast('event:messageReceived', true);
         console.log("message received");
-        if (e.origin === 'https://ninkigumi-aaa.appspot.com' || e.origin === 'http://ninkigumi_github_com') {
+        if (e.origin === 'https://ninkigumi-aaa.appspot.com' || e.origin === 'http://ninkigumi.github.io') {
             console.log(e.data);
             var o = JSON.parse(e.data);
             if (o.googleAccessToken) {
