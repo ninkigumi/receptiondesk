@@ -78,7 +78,7 @@
         <fieldset class="control-group">
             <label class="control-label" for="message"><span ng-hide="isLogined()">あなたのメッセージ</span><span ng-show="isLogined()"><img ng-src="{{yourPicture}}" style="vertical-align:sub;" width="64" height="64" alt="{{yourName}}" style="vertical-align:sub;">{{yourName}}さんのメッセージ</span></label>
             <div class="controls">
-                <textarea class="span7 disabled" name="message" id="message" rows="10" placeholder="" required="" ng-model="message.message" required ng-minlength="0"></textarea>
+                <textarea class="form-control disabled" name="message" id="message" rows="10" placeholder="" required="" ng-model="message.message" required ng-minlength="0"></textarea>
             </div>
         </fieldset>
 
