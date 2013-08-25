@@ -1,3 +1,11 @@
+  .navbar-fixed-top .navbar-brand {font-weight: bold;font-size: 20px;}
+  .navbar-inverse {background-color: #f2f2f2;border-color: #f2f2f2;}
+  .navbar-inverse .navbar-brand {color: #777;}
+  .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {color: #999;}
+  .navbar-brand {padding-right:50px}
+  .navbar-brand img {position: absolute;top:12px}
+  .navbar-brand span {position: relative;left: 27px;}
+
 .jumbotronA{
     background-color: #3A3406;
 }
