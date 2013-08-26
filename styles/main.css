@@ -2,6 +2,13 @@
 .navbar-brand img {position: absolute;top:12px}
 .navbar-brand span {position: relative;left: 27px;}
 
+#navyourpicture{
+left: 1em;
+}
+#navyourname{
+margin-left: 2.3em;
+}
+
 .jumbotronA{
     background-color: #3A3406;
 }
